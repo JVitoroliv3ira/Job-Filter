@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: v009-insert-initial-data
+      author: Joao Vitor de Oliveira Santos
+      context: dml
+      changes:
+        - sqlFile:
+            path: "db/changelog/sql/v009-initial-data.sql"
