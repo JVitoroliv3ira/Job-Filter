@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: v008-create-opportunity-tag-table
+      author: Joao Vitor de Oliveira Santos
+      context: ddl
+      changes:
+        - createTable:
+            schemaName: JOB_FILTER
+            tableName: TB_OPPORTUNITY_TAG
+            columns:
+              - column:
+                  name: ID_OPPORTUNITY
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_OPPORTUNITY_TAG
+                    foreignKeyName: FK_OPPORTUNITY_TAG_OPPORTUNITY
+                    references: JOB_FILTER.TB_OPPORTUNITIES(ID_OPPORTUNITY)
+              - column:
+                  name: ID_TAG
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_TAG_OPPORTUNITY
+                    foreignKeyName: FK_OPPORTUNITY_TAG_TAG
+                    references: JOB_FILTER.TB_TAGS(ID_TAG)
