@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: v003-create-company-table
+      author: Joao Vitor de Oliveira Santos
+      context: ddl
+      changes:
+        - createTable:
+            schemaName: JOB_FILTER
+            tableName: TB_COMPANIES
+            columns:
+              - column:
+                  name: ID_COMPANY
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_COMPANY
+              - column:
+                  name: NM_COMPANY
+                  type: VARCHAR2(45)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: DS_COMPANY
+                  type: VARCHAR2(120)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: EM_COMPANY
+                  type: VARCHAR2(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CT_COMPANY
+                  type: VARCHAR2(20)
+                  constraints:
+                    nullable: false
