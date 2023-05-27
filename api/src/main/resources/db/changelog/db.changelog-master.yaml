@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - include:
+      file: "db/changelog/changelogs/v001-create-application-schema.yaml"
+  - include:
+      file: "db/changelog/changelogs/v002-create-company-sequence.yaml"
+  - include:
+      file: "db/changelog/changelogs/v003-create-company-table.yaml"
+  - include:
+      file: "db/changelog/changelogs/v004-create-tag-sequence.yaml"
+  - include:
+      file: "db/changelog/changelogs/v005-create-tag-table.yaml"
+  - include:
+      file: "db/changelog/changelogs/v006-create-opportunity-sequence.yaml"
+  - include:
+      file: "db/changelog/changelogs/v007-create-opportunity-table.yaml"
+  - include:
+      file: "db/changelog/changelogs/v008-create-opportunity-tag-table.yaml"
+  - include:
+      file: "db/changelog/changelogs/v009-insert-initial-data.yaml"
