@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: v005-create-tag-table
+      author: Joao Vitor de Oliveira Santos
+      context: ddl
+      changes:
+        - createTable:
+            schemaName: JOB_FILTER
+            tableName: TB_TAGS
+            columns:
+              - column:
+                  name: ID_TAG
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_TAG
+              - column:
+                  name: NM_TAG
+                  type: VARCHAR2(30)
+                  constraints:
+                    nullable: false
