@@ -11,6 +11,22 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 
-    @Query("SELECT C FROM Company C WHERE (:name IS NULL OR C.name LIKE %:name%) AND (:description IS NULL OR C.description LIKE %:description%)")
-    Page<Company> findAll(@Param("name") String name, @Param("description") String description, Pageable pageable);
+    @Query("""
+            SELECT
+                C
+            FROM
+                Company C
+            WHERE
+                (:name IS NULL OR C.name LIKE %:name%)
+                AND (:description IS NULL OR C.description LIKE %:description%)
+                AND (:email IS NULL OR C.email LIKE %:email%)
+                AND (:city IS NULL OR C.city LIKE %:city%)
+            """)
+    Page<Company> findAll(
+            @Param("name") String name,
+            @Param("description") String description,
+            @Param("email") String email,
+            @Param("city") String city,
+            Pageable pageable
+    );
 }
