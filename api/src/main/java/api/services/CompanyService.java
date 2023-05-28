@@ -13,8 +13,8 @@ public class CompanyService {
 
     private final CompanyRepository repository;
 
-    public Page<Company> paginate(CompanyFilterDTO pageable) {
-        return this.repository.findAll(
+    public Page<Company> search(CompanyFilterDTO pageable) {
+        return this.repository.search(
                 pageable.getName(),
                 pageable.getDescription(),
                 pageable.getCity(),

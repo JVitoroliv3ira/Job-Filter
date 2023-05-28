@@ -22,7 +22,7 @@ public interface CompanyRepository extends JpaRepository<Company, Long> {
                 AND (:email IS NULL OR C.email LIKE %:email%)
                 AND (:city IS NULL OR C.city LIKE %:city%)
             """)
-    Page<Company> findAll(
+    Page<Company> search(
             @Param("name") String name,
             @Param("description") String description,
             @Param("email") String email,

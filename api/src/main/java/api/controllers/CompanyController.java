@@ -22,7 +22,7 @@ public class CompanyController {
     public ResponseEntity<PaginatedResultDTO<Company>> search(@RequestBody CompanyFilterDTO request) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(new PaginatedResultDTO<>(this.companyService.paginate(request)));
+                .body(new PaginatedResultDTO<>(this.companyService.search(request)));
     }
 }
 
