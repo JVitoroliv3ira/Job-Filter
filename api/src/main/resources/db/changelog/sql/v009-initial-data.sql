@@ -32,22 +32,22 @@ VALUES
     (13, 'Tag 13'),
     (14, 'Tag 14');
 
-INSERT INTO JOB_FILTER.TB_OPPORTUNITIES (ID_OPPORTUNITY, NM_OPPORTUNITY, DS_OPPORTUNITY, TP_OPPORTUNITY, VL_SALARY)
+INSERT INTO JOB_FILTER.TB_OPPORTUNITIES (ID_OPPORTUNITY, NM_OPPORTUNITY, DS_OPPORTUNITY, TP_OPPORTUNITY, VL_SALARY, ID_COMPANY)
 VALUES
-    (1, 'Vaga 1', 'Descrição da Vaga 1', 'REMOTE', 5000.00),
-    (2, 'Vaga 2', 'Descrição da Vaga 2', 'IN_PERSON', 4000.00),
-    (3, 'Vaga 3', 'Descrição da Vaga 3', 'HYBRID', 6000.00),
-    (4, 'Vaga 4', 'Descrição da Vaga 4', 'REMOTE', 5500.00),
-    (5, 'Vaga 5', 'Descrição da Vaga 5', 'IN_PERSON', 4500.00),
-    (6, 'Vaga 6', 'Descrição da Vaga 6', 'HYBRID', 6500.00),
-    (7, 'Vaga 7', 'Descrição da Vaga 7', 'REMOTE', 5200.00),
-    (8, 'Vaga 8', 'Descrição da Vaga 8', 'IN_PERSON', 4200.00),
-    (9, 'Vaga 9', 'Descrição da Vaga 9', 'HYBRID', 6200.00),
-    (10, 'Vaga 10', 'Descrição da Vaga 10', 'REMOTE', 5100.00),
-    (11, 'Vaga 11', 'Descrição da Vaga 11', 'IN_PERSON', 4100.00),
-    (12, 'Vaga 12', 'Descrição da Vaga 12', 'HYBRID', 6100.00),
-    (13, 'Vaga 13', 'Descrição da Vaga 13', 'REMOTE', 5300.00),
-    (14, 'Vaga 14', 'Descrição da Vaga 14', 'IN_PERSON', 4400.00);
+    (1, 'Vaga 1', 'Descrição da Vaga 1', 'REMOTE', 5000.00, 1),
+    (2, 'Vaga 2', 'Descrição da Vaga 2', 'IN_PERSON', 4000.00, 2),
+    (3, 'Vaga 3', 'Descrição da Vaga 3', 'HYBRID', 6000.00, 1),
+    (4, 'Vaga 4', 'Descrição da Vaga 4', 'REMOTE', 5500.00, 4),
+    (5, 'Vaga 5', 'Descrição da Vaga 5', 'IN_PERSON', 4500.00, 2),
+    (6, 'Vaga 6', 'Descrição da Vaga 6', 'HYBRID', 6500.00, 7),
+    (7, 'Vaga 7', 'Descrição da Vaga 7', 'REMOTE', 5200.00, 4),
+    (8, 'Vaga 8', 'Descrição da Vaga 8', 'IN_PERSON', 4200.00, 7),
+    (9, 'Vaga 9', 'Descrição da Vaga 9', 'HYBRID', 6200.00, 9),
+    (10, 'Vaga 10', 'Descrição da Vaga 10', 'REMOTE', 5100.00, 1),
+    (11, 'Vaga 11', 'Descrição da Vaga 11', 'IN_PERSON', 4100.00, 4),
+    (12, 'Vaga 12', 'Descrição da Vaga 12', 'HYBRID', 6100.00, 3),
+    (13, 'Vaga 13', 'Descrição da Vaga 13', 'REMOTE', 5300.00, 2),
+    (14, 'Vaga 14', 'Descrição da Vaga 14', 'IN_PERSON', 4400.00, 12);
 
 INSERT INTO JOB_FILTER.TB_OPPORTUNITY_TAG (ID_OPPORTUNITY, ID_TAG)
 VALUES

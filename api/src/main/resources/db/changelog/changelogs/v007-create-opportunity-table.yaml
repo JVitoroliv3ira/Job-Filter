@@ -34,3 +34,10 @@ databaseChangeLog:
                   type: NUMERIC(10, 2)
                   constraints:
                     nullable: false
+              - column:
+                  name: ID_COMPANY
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: FK_OPPORTUNITY_COMPANY
+                    references: JOB_FILTER.TB_COMPANIES(ID_COMPANY)
+                    nullable: false
