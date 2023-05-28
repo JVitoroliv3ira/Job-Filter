@@ -13,13 +13,13 @@ public class CompanyService {
 
     private final CompanyRepository repository;
 
-    public Page<Company> search(CompanyFilterDTO pageable) {
+    public Page<Company> search(CompanyFilterDTO filter) {
         return this.repository.search(
-                pageable.getName(),
-                pageable.getDescription(),
-                pageable.getCity(),
-                pageable.getEmail(),
-                pageable.getPageable()
+                filter.getName(),
+                filter.getDescription(),
+                filter.getCity(),
+                filter.getEmail(),
+                filter.getPageable()
         );
     }
 }
