@@ -32,6 +32,7 @@ public class Opportunity {
     @Column(name = "VL_SALARY")
     private Long salary;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "TP_OPPORTUNITY")
     private OpportunityType type;
 
