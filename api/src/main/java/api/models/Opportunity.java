@@ -36,6 +36,10 @@ public class Opportunity {
     @Column(name = "TP_OPPORTUNITY")
     private OpportunityType type;
 
+    @ManyToOne
+    @JoinColumn(name = "ID_COMPANY")
+    private Company company;
+
     @ManyToMany
     @JoinTable(
             schema = "JOB_FILTER",
