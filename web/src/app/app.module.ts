@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { OpportunitiesModule } from './pages/opportunities/opportunities.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -11,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    OpportunitiesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
