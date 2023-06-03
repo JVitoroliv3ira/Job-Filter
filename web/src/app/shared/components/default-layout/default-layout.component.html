@@ -1,1 +1,17 @@
-<p>default-layout works!</p>
+<header class="navbar navbar-expand navbar-dark bg-success p-3">
+    <a class="navbar-brand" href="/">JobFilter</a>
+    <ul class="navbar-nav">
+        <li>
+            <a class="nav-link" href="/">Oportunidades</a>
+        </li>
+        <li>
+            <a class="nav-link" href="/companies">Empresas</a>
+        </li>
+    </ul>
+</header>
+
+<main class="bg-secondary-subtle d-flex flex-column p-3" style="min-height: 100vh;">
+    <ng-content></ng-content>
+</main>
+
+<footer class="bg-success p-3" style="height: 80px"></footer>

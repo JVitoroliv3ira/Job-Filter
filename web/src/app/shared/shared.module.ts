@@ -6,6 +6,9 @@ import { DefaultLayoutComponent } from './components/default-layout/default-layo
   declarations: [
     DefaultLayoutComponent
   ],
-  imports: []
+  imports: [],
+  exports: [
+    DefaultLayoutComponent
+  ]
 })
 export class SharedModule { }
