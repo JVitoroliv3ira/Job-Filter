@@ -6,6 +6,10 @@ export abstract class AbstractApiService {
 
     constructor(private endpoint: string, private http: HttpClient) { }
 
+    public get<R>(path: string): Observable<R> {
+        return this.http.get<R>(`${this.baseUrl}/${this.endpoint}/${path}`)
+    }
+
     public post<R, T>(path: string, data: T): Observable<R> {
         return this.http.post<R>(`${this.baseUrl}/${this.endpoint}/${path}`, data);
     }
