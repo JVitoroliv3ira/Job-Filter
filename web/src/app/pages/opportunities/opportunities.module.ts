@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { OpportunitiesRoutingModule } from './opportunities-routing.module';
 import { OpportunitiesListComponent } from './opportunities-list/opportunities-list.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { OpportunitiesListComponent } from './opportunities-list/opportunities-l
   ],
   imports: [
     CommonModule,
+    SharedModule,
     OpportunitiesRoutingModule
   ]
 })
