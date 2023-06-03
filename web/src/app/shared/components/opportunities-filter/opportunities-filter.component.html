@@ -57,7 +57,11 @@
             <label class="mb-1">Tags associadas</label>
             <ng-select
               placeholder="Filtrar vaga por tag..."
-              notFoundText="Nenhuma tag encontrada.">
+              notFoundText="Nenhuma tag encontrada."
+              [items]="tags"
+              bindLabel="name"
+              bindValue="id"
+              [loading]="loadingTags">
             </ng-select>
         </div>
     </div>
