@@ -50,7 +50,11 @@
             <label class="mb-1">Modalidade da vaga</label>
             <ng-select
               placeholder="Filtrar vaga por modalidade..."
-              notFoundText="Nenhuma modalidade encontrada.">
+              notFoundText="Nenhuma modalidade encontrada."
+              [items]="types"
+              bindLabel="value"
+              bindValue="key"
+              [loading]="loadingOpportunitiesTypes">
             </ng-select>
         </div>
         <div class="col-3">
