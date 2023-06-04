@@ -1,1 +1,22 @@
-<p>opportunities-feed works!</p>
+<div *ngIf="paginatedResult.data != null" class="container bg-light p-3 shadow-sm" >
+    <div class="row mb-3">
+        <div class="col-12">
+            <h5 class="card-title">Oportunidades cadastradas</h5>
+        </div>
+    </div>
+    <div class="row row-cols-2">
+        <div class="col" *ngFor="let opportunity of paginatedResult.data">
+            <app-opportunity-card [opportunity]="opportunity"></app-opportunity-card>
+        </div>
+    </div>
+    
+</div>
+
+<div *ngIf="paginatedResult.data == null" class="container bg-light p-3 shadow-sm">
+    <div class="row">
+        <div class="col-12 d-flex flex-column align-items-center justify-content-center" style="gap: 15px;">
+            <div class="spinner-border text-dark" role="status"></div>
+            <span>Carregando as oportunidades cadastradas...</span>
+        </div>
+    </div>
+</div>
