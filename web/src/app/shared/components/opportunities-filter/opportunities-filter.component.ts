@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { take } from 'rxjs';
 import { OpportunityFilterDTO } from 'src/app/api/dtos/opportunity-filter.dto';
 import { OpportunityType } from 'src/app/api/enums/opportunity-type';
@@ -18,6 +18,7 @@ export class OpportunitiesFilterComponent implements OnInit {
   public types: Array<OpportunityType> = [];
   public loadingOpportunitiesTypes = true;
   public filter = {} as OpportunityFilterDTO;
+  @Output() filterEvent = new EventEmitter<OpportunityFilterDTO>();
 
   constructor(private tagService: TagService, private opportunitiesService: OpportunitiesService) { }
 
@@ -31,7 +32,7 @@ export class OpportunitiesFilterComponent implements OnInit {
   }
 
   public submit(): void {
-    console.log(this.filter);
+    this.filterEvent.emit(this.filter);
   }
 
   private findAllOpportunitiesTypes(): void {
