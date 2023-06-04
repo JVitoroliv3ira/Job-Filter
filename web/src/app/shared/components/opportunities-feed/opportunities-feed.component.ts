@@ -9,4 +9,5 @@ import { Opportunity } from 'src/app/api/models/opportunity';
 })
 export class OpportunitiesFeedComponent {
   @Input() paginatedResult: PaginatedResultDTO<Opportunity> = {} as PaginatedResultDTO<Opportunity>;
+  @Input() loadingSearch = true;
 }

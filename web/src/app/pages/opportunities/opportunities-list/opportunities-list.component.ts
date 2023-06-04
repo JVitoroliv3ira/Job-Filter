@@ -12,6 +12,7 @@ import { OpportunitiesService } from 'src/app/api/services/opportunities.service
 })
 export class OpportunitiesListComponent implements OnInit {
   public filter = { pageNumber: 0, pageSize: 7 } as OpportunityFilterDTO;
+  public loadingSearch = true;
   public paginatedResult: PaginatedResultDTO<Opportunity> = {} as PaginatedResultDTO<Opportunity>;
 
   constructor(private opportunitiesService: OpportunitiesService) {}
@@ -32,16 +33,23 @@ export class OpportunitiesListComponent implements OnInit {
   }
 
   private searchOpportunities(): void {
+    this.loadingSearch = true;
     this.opportunitiesService
       .searchOpportunities(this.filter)
       .pipe(take(1))
       .subscribe({
-        next: (result: PaginatedResultDTO<Opportunity>) => this.handleOpportunitiesRequestNext(result)
+        next: (result: PaginatedResultDTO<Opportunity>) => this.handleOpportunitiesRequestNext(result),
+        complete: () => this.completRequest(),
+        error: () => this.completRequest()
       });
   }
 
   private handleOpportunitiesRequestNext(paginatedResult: PaginatedResultDTO<Opportunity>): void {
     this.paginatedResult = paginatedResult;
+  }
+
+  private completRequest(): void {
+    this.loadingSearch = false;
   }
 
 }
