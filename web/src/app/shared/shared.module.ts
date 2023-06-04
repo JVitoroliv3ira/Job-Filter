@@ -6,12 +6,14 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 
 import { DefaultLayoutComponent } from './components/default-layout/default-layout.component';
 import { OpportunitiesFilterComponent } from './components/opportunities-filter/opportunities-filter.component';
+import { OpportunitiesFeedComponent } from './components/opportunities-feed/opportunities-feed.component';
 
 
 @NgModule({
   declarations: [
     DefaultLayoutComponent,
-    OpportunitiesFilterComponent
+    OpportunitiesFilterComponent,
+    OpportunitiesFeedComponent
   ],
   imports: [
     CommonModule,
