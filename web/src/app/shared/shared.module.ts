@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 import { DefaultLayoutComponent } from './components/default-layout/default-layout.component';
 import { OpportunitiesFilterComponent } from './components/opportunities-filter/opportunities-filter.component';
@@ -15,7 +16,8 @@ import { OpportunitiesFilterComponent } from './components/opportunities-filter/
   imports: [
     CommonModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    CurrencyMaskModule
   ],
   exports: [
     DefaultLayoutComponent,
