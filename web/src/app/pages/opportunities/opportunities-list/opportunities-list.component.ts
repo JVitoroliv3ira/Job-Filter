@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
 import { OpportunityFilterDTO } from 'src/app/api/dtos/opportunity-filter.dto';
+import { PaginatedResultDTO } from 'src/app/api/dtos/paginated-result.dto';
+import { Opportunity } from 'src/app/api/models/opportunity';
 import { OpportunitiesService } from 'src/app/api/services/opportunities.service';
 
 @Component({
@@ -9,7 +11,8 @@ import { OpportunitiesService } from 'src/app/api/services/opportunities.service
   styleUrls: ['./opportunities-list.component.scss']
 })
 export class OpportunitiesListComponent implements OnInit {
-  public filter = { pageNumber: 0, pageSize: 15 } as OpportunityFilterDTO;
+  public filter = { pageNumber: 0, pageSize: 7 } as OpportunityFilterDTO;
+  public paginatedResult: PaginatedResultDTO<Opportunity> = {} as PaginatedResultDTO<Opportunity>;
 
   constructor(private opportunitiesService: OpportunitiesService) {}
 
@@ -32,6 +35,13 @@ export class OpportunitiesListComponent implements OnInit {
     this.opportunitiesService
       .searchOpportunities(this.filter)
       .pipe(take(1))
-      .subscribe(res => console.log(res));
+      .subscribe({
+        next: (result: PaginatedResultDTO<Opportunity>) => this.handleOpportunitiesRequestNext(result)
+      });
   }
+
+  private handleOpportunitiesRequestNext(paginatedResult: PaginatedResultDTO<Opportunity>): void {
+    this.paginatedResult = paginatedResult;
+  }
+
 }
