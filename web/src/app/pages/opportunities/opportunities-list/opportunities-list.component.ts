@@ -11,7 +11,7 @@ import { OpportunitiesService } from 'src/app/api/services/opportunities.service
   styleUrls: ['./opportunities-list.component.scss']
 })
 export class OpportunitiesListComponent implements OnInit {
-  public filter = { pageNumber: 0, pageSize: 7 } as OpportunityFilterDTO;
+  public filter = { pageNumber: 0, pageSize: 5 } as OpportunityFilterDTO;
   public loadingSearch = true;
   public paginatedResult: PaginatedResultDTO<Opportunity> = {} as PaginatedResultDTO<Opportunity>;
 
@@ -29,6 +29,11 @@ export class OpportunitiesListComponent implements OnInit {
     this.filter.type = filter.type;
     this.filter.tag = filter.tag;
 
+    this.searchOpportunities();
+  }
+
+  public handleLoadMoreEvent(): void {
+    this.filter.pageSize += 5;
     this.searchOpportunities();
   }
 

@@ -9,7 +9,13 @@
             <app-opportunity-card [opportunity]="opportunity"></app-opportunity-card>
         </div>
     </div>
-    
+    <div *ngIf="!loadingSearch && canLoadMore()" class="row">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <button (click)="loadMoreEvent()" style="border: none; background: none;">
+                Exibir mais oportunidades
+            </button>
+        </div>
+    </div>
 </div>
 
 <div *ngIf="loadingSearch" class="container bg-light p-3 shadow-sm">

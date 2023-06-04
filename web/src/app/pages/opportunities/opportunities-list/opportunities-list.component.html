@@ -1,4 +1,8 @@
 <app-default-layout>
     <app-opportunities-filter (filterEvent)="handleFilterEvent($event)"></app-opportunities-filter>
-    <app-opportunities-feed [paginatedResult]="paginatedResult" [loadingSearch]="loadingSearch"></app-opportunities-feed>
+    <app-opportunities-feed 
+        [paginatedResult]="paginatedResult" 
+        [loadingSearch]="loadingSearch"
+        (loadMoreEmitter)="handleLoadMoreEvent()">
+    </app-opportunities-feed>
 </app-default-layout>
