@@ -4,9 +4,16 @@
         <fieldset class="form-group">
           <label class="mb-1">Título da vaga</label>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Filtrar vaga pelo título...">
+            <input
+              [(ngModel)]="filter.name" 
+              type="text" 
+              class="form-control" 
+              placeholder="Filtrar vaga pelo título...">
             <div class="input-group-append">
-              <button class="btn btn-success" type="button">
+              <button
+                (click)="submit()" 
+                class="btn btn-success" 
+                type="button">
                 <i class="bi bi-search"></i>
               </button>
             </div>
@@ -16,7 +23,9 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <button (click)="toggleAdvancedFilterVisibility()" style="font-size: 12px; background: none; border: none;">
+        <button 
+          (click)="toggleAdvancedFilterVisibility()" 
+          style="font-size: 12px; background: none; border: none;">
             {{ advancedFilterIsExpanded ? 'Ocultar filtro avançado' : 'Exibir filtro avançado' }}
         </button>
       </div>
@@ -27,6 +36,7 @@
         <div class="col-12">
             <label class="mb-1">Descrição da vaga</label>
             <textarea 
+                [(ngModel)]="filter.description"
                 class="form-control" style="height: 70px; resize: none;" 
                 placeholder="Filtrar vaga pela descrição..."></textarea>
         </div>
@@ -35,6 +45,7 @@
         <div class="col-3">
             <label class="mb-1">Nome da empresa</label>
             <input
+                [(ngModel)]="filter.companyName"
                 type="text"
                 class="form-control"
                 placeholder="Filtrar vaga pelo nome da empresa..."/>
@@ -42,6 +53,7 @@
         <div class="col-3">
             <label class="mb-1">Salário</label>
             <input
+                [(ngModel)]="filter.salary"
                 type="text"
                 class="form-control"
                 placeholder="Filtrar vaga pelo salário..."/>
@@ -53,8 +65,8 @@
               notFoundText="Nenhuma modalidade encontrada."
               [items]="types"
               bindLabel="value"
-              bindValue="key"
-              [loading]="loadingOpportunitiesTypes">
+              [loading]="loadingOpportunitiesTypes"
+              [(ngModel)]="filter.type">
             </ng-select>
         </div>
         <div class="col-3">
@@ -64,8 +76,8 @@
               notFoundText="Nenhuma tag encontrada."
               [items]="tags"
               bindLabel="name"
-              bindValue="id"
-              [loading]="loadingTags">
+              [loading]="loadingTags"
+              [(ngModel)]="filter.tag">
             </ng-select>
         </div>
     </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
+import { OpportunityFilterDTO } from 'src/app/api/dtos/opportunity-filter.dto';
 import { OpportunityType } from 'src/app/api/enums/opportunity-type';
 import { Tag } from 'src/app/api/models/tag';
 import { OpportunitiesService } from 'src/app/api/services/opportunities.service';
@@ -16,6 +17,7 @@ export class OpportunitiesFilterComponent implements OnInit {
   public loadingTags = true;
   public types: Array<OpportunityType> = [];
   public loadingOpportunitiesTypes = true;
+  public filter = {} as OpportunityFilterDTO;
 
   constructor(private tagService: TagService, private opportunitiesService: OpportunitiesService) { }
 
@@ -26,6 +28,10 @@ export class OpportunitiesFilterComponent implements OnInit {
 
   public toggleAdvancedFilterVisibility(): void {
     this.advancedFilterIsExpanded = !this.advancedFilterIsExpanded;
+  }
+
+  public submit(): void {
+    console.log(this.filter);
   }
 
   private findAllOpportunitiesTypes(): void {
