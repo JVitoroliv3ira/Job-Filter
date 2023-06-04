@@ -7,7 +7,7 @@ export interface Opportunity {
     name: string;
     description: string;
     salary: number;
-    opportunityType: OpportunityType;
+    type: OpportunityType;
     company: Company;
     tags: Array<Tag>
 }
