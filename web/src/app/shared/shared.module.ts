@@ -23,7 +23,8 @@ import { OpportunitiesFeedComponent } from './components/opportunities-feed/oppo
   ],
   exports: [
     DefaultLayoutComponent,
-    OpportunitiesFilterComponent
+    OpportunitiesFilterComponent,
+    OpportunitiesFeedComponent
   ]
 })
 export class SharedModule { }
