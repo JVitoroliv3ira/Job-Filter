@@ -8,6 +8,7 @@ import { DefaultLayoutComponent } from './components/default-layout/default-layo
 import { OpportunitiesFilterComponent } from './components/opportunities-filter/opportunities-filter.component';
 import { OpportunitiesFeedComponent } from './components/opportunities-feed/opportunities-feed.component';
 import { OpportunityCardComponent } from './components/opportunity-card/opportunity-card.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { OpportunityCardComponent } from './components/opportunity-card/opportun
     DefaultLayoutComponent,
     OpportunitiesFilterComponent,
     OpportunitiesFeedComponent,
-    OpportunityCardComponent
+    OpportunityCardComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     CommonModule,
