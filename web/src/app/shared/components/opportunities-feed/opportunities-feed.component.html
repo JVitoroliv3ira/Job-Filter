@@ -26,12 +26,4 @@
     </div>
 </div>
 
-
-<div *ngIf="loadingSearch" class="container bg-light p-3 shadow-sm">
-    <div class="row">
-        <div class="col-12 d-flex flex-column align-items-center justify-content-center" style="gap: 15px;">
-            <div class="spinner-border text-dark" role="status"></div>
-            <span>Carregando as oportunidades cadastradas...</span>
-        </div>
-    </div>
-</div>
+<app-loading-spinner *ngIf="loadingSearch" message="Carregando as oportunidades cadastradas..."></app-loading-spinner>
