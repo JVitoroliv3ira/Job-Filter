@@ -1,1 +1,54 @@
-<p>companies-filter works!</p>
+<section class="container bg-light p-3 shadow-sm">
+    <div class="row mb-2">
+        <div class="col-12">
+            <fieldset class="form-group">
+                <label class="mb-1">Nome da empresa</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Filtrar empresa pelo nome...">
+                    <div class="input-group-append">
+                        <button
+                          class="btn btn-success" 
+                          type="button">
+                          <i class="bi bi-search"></i>
+                        </button>
+                      </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button
+                (click)="toggleAdvancedFilterVisibility()" 
+                style="font-size: 12px; background: none; border: none;">
+                {{ advancedFilterIsExpanded ? 'Ocultar filtro avançado' : 'Exibir filtro avançado' }}
+            </button>
+        </div>
+    </div>
+</section>
+<section *ngIf="advancedFilterIsExpanded" class="container bg-body-secondary p-3 shadow-sm">
+    <div class="row mb-2">
+        <div class="col-12">
+            <label class="mb-1">Descrição da vaga</label>
+            <textarea 
+                class="form-control" style="height: 70px; resize: none;" 
+                placeholder="Filtrar empresa pela descrição..."></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label class="mb-1">Email da empresa</label>
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Filtrar empresa pelo email..."/>
+        </div>
+        <div class="col-6">
+            <label class="mb-1">Sede empresa</label>
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Filtrar vaga pela cidade sede da empresa..."/>
+        </div>
+    </div>
+</section>
