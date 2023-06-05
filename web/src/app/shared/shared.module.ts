@@ -9,6 +9,7 @@ import { OpportunitiesFilterComponent } from './components/opportunities-filter/
 import { OpportunitiesFeedComponent } from './components/opportunities-feed/opportunities-feed.component';
 import { OpportunityCardComponent } from './components/opportunity-card/opportunity-card.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { CompaniesFilterComponent } from './components/companies-filter/companies-filter.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
     OpportunitiesFilterComponent,
     OpportunitiesFeedComponent,
     OpportunityCardComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    CompaniesFilterComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
   exports: [
     DefaultLayoutComponent,
     OpportunitiesFilterComponent,
-    OpportunitiesFeedComponent
+    OpportunitiesFeedComponent,
+    CompaniesFilterComponent
   ]
 })
 export class SharedModule { }
