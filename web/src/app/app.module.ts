@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { OpportunitiesModule } from './pages/opportunities/opportunities.module';
+import { CompaniesModule } from './pages/companies/companies.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OpportunitiesModule } from './pages/opportunities/opportunities.module'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    OpportunitiesModule
+    OpportunitiesModule,
+    CompaniesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
