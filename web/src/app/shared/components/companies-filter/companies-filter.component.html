@@ -4,9 +4,14 @@
             <fieldset class="form-group">
                 <label class="mb-1">Nome da empresa</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Filtrar empresa pelo nome...">
+                    <input
+                        [(ngModel)]="filter.name" 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Filtrar empresa pelo nome...">
                     <div class="input-group-append">
                         <button
+                          (click)="submit()"
                           class="btn btn-success" 
                           type="button">
                           <i class="bi bi-search"></i>
@@ -30,7 +35,8 @@
     <div class="row mb-2">
         <div class="col-12">
             <label class="mb-1">Descrição da vaga</label>
-            <textarea 
+            <textarea
+                [(ngModel)]="filter.description"
                 class="form-control" style="height: 70px; resize: none;" 
                 placeholder="Filtrar empresa pela descrição..."></textarea>
         </div>
@@ -39,6 +45,7 @@
         <div class="col-6">
             <label class="mb-1">Email da empresa</label>
             <input
+                [(ngModel)]="filter.email"
                 type="text"
                 class="form-control"
                 placeholder="Filtrar empresa pelo email..."/>
@@ -46,6 +53,7 @@
         <div class="col-6">
             <label class="mb-1">Sede empresa</label>
             <input
+                [(ngModel)]="filter.city"
                 type="text"
                 class="form-control"
                 placeholder="Filtrar vaga pela cidade sede da empresa..."/>
