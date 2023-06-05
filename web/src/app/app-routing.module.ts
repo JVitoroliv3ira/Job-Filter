@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/opportunities/opportunities.module').then(module => module.OpportunitiesModule)
   },
   {
+    path: 'companies',
+    loadChildren: () => import('./pages/companies/companies.module').then(module => module.CompaniesModule)
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'opportunities'
