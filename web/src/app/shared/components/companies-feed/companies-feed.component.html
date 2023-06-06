@@ -18,4 +18,12 @@
     </div>
 </div>
 
+<div *ngIf="!loadingSearch && paginatedResult.data.length == 0" class="container bg-light p-3 shadow-sm">
+    <div class="row">
+        <div class="col-12 d-flex flex-column align-items-center justify-content-center" style="gap: 15px;">
+            <h5 class="card-title">Não foram encontradas empresas cadastradas.</h5>
+        </div>
+    </div>
+</div>
+
 <app-loading-spinner *ngIf="loadingSearch" message="Carregando as empresas cadastradas..."></app-loading-spinner>
