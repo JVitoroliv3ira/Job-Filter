@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Company } from 'src/app/api/models/company';
 
 @Component({
   selector: 'app-company-card',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./company-card.component.scss']
 })
 export class CompanyCardComponent {
+  public cardIsExpanded = false;
+  @Input() company: Company = {} as Company;
 
+  public toggleCardStatus(): void {
+    this.cardIsExpanded = !this.cardIsExpanded;
+  }
 }
