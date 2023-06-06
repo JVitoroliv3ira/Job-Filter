@@ -14,4 +14,8 @@
 
 - Angular: Um framework JavaScript que permite a construção de interfaces de usuário modernas e interativas.
 
-### Como Executar o Projeto
+### Imagens
+
+![Listagem de vagas](./assets/opportunities.png)
+![Listagem de empresas](./assets/companies.png)
+![Listagem de empresas](./assets/companies_2.png)
