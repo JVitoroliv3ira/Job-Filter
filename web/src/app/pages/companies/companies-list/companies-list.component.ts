@@ -42,8 +42,8 @@ export class CompaniesListComponent implements OnInit {
       .pipe(take(1))
       .subscribe({
         next: (result: PaginatedResultDTO<Company>) => this.handleCompaniesRequestNext(result),
-        complete: () => this.completRequest(),
-        error: () => this.completRequest() 
+        complete: () => this.completeRequest(),
+        error: () => this.completeRequest() 
       })
   }
 
@@ -51,7 +51,7 @@ export class CompaniesListComponent implements OnInit {
     this.paginatedResult = paginatedResult;
   }
 
-  private completRequest(): void {
+  private completeRequest(): void {
     this.loadingSearch = false;
   }
 }
