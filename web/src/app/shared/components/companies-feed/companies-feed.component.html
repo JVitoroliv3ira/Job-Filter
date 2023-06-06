@@ -4,6 +4,11 @@
             <h5 class="card-title">Empresas cadastradas</h5>
         </div>
     </div>
+    <div class="row row-cols-2">
+        <div class="col" *ngFor="let company of paginatedResult.data">
+            <app-company-card [company]="company"></app-company-card>
+        </div>
+    </div>
     <div *ngIf="!loadingSearch && canLoadMore()" class="row">
         <div class="col-12 d-flex justify-content-center align-items-center">
             <button (click)="loadMoreEvent()" style="border: none; background: none;">
