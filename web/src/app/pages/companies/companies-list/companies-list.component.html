@@ -1,3 +1,8 @@
 <app-default-layout>
     <app-companies-filter (filterEvent)="handleFilterEvent($event)"></app-companies-filter>
+    <app-companies-feed 
+        [paginatedResult]="paginatedResult" 
+        [loadingSearch]="loadingSearch"
+        (loadMoreEmitter)="handleLoadMoreEvent()">
+    </app-companies-feed>
 </app-default-layout>
