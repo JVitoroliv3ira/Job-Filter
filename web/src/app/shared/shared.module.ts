@@ -11,6 +11,7 @@ import { OpportunityCardComponent } from './components/opportunity-card/opportun
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { CompaniesFilterComponent } from './components/companies-filter/companies-filter.component';
 import { CompaniesFeedComponent } from './components/companies-feed/companies-feed.component';
+import { CompanyCardComponent } from './components/company-card/company-card.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CompaniesFeedComponent } from './components/companies-feed/companies-fe
     OpportunityCardComponent,
     LoadingSpinnerComponent,
     CompaniesFilterComponent,
-    CompaniesFeedComponent
+    CompaniesFeedComponent,
+    CompanyCardComponent
   ],
   imports: [
     CommonModule,
