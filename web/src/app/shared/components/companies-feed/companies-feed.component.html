@@ -1,0 +1,16 @@
+<div *ngIf="!loadingSearch && paginatedResult.data.length" class="container bg-light p-3 shadow-sm">
+    <div class="row mb-3">
+        <div class="col-12">
+            <h5 class="card-title">Empresas cadastradas</h5>
+        </div>
+    </div>
+    <div *ngIf="!loadingSearch && canLoadMore()" class="row">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <button (click)="loadMoreEvent()" style="border: none; background: none;">
+                Exibir mais empresas
+            </button>
+        </div>
+    </div>
+</div>
+
+<app-loading-spinner *ngIf="loadingSearch" message="Carregando as empresas cadastradas..."></app-loading-spinner>
